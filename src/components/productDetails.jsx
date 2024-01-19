@@ -8,15 +8,13 @@ import { BiMinus } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import clicksound from "../audio/clicksound.wav";
 import Product from "./Product";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import {
   sendObjectIDToDatabase,
   getReviews,
   getMyProduct,
 } from "../../APIS/Fetching";
 import "animate.css";
-import Cart from "./Cart.jsx";
+
 function productDetails(props) {
   let params = useParams();
   let [index, setIndex] = useState(0);
@@ -26,7 +24,6 @@ function productDetails(props) {
   const [reviewFlag, setReviewFlag] = useState(false);
   let [reviews, SetReviews] = useState([]);
   let reviewsCheckTemp = { data: [] };
-  const MySwal = withReactContent(Swal);
   async function getProduct(params) {
     setReviewFlag(true);
     try {
@@ -46,7 +43,7 @@ function productDetails(props) {
   // declare my products data
 
   const myProductDataArr = props.productsData;
-  
+
   //functions
   // set Quantinty
   useEffect(() => {
@@ -55,15 +52,14 @@ function productDetails(props) {
     getProduct(params);
     window.scrollTo({
       top: 0,
-       // add smooth scrolling effect
+      // add smooth scrolling effect
     });
   }, [params.id]);
-
 
   async function reviewsHandle(product) {
     try {
       const reviewsCheck = await getReviews(product._id);
-      if (reviewsCheck.data.length === 0 && reviewFlag) { 
+      if (reviewsCheck.data.length === 0 && reviewFlag) {
         reviewsHandle(product);
       }
       SetReviews(reviewsCheck.data);
@@ -86,9 +82,13 @@ function productDetails(props) {
     if (props.myQuantity > 0) props.setQuantity((prev) => prev - 1);
   }
   async function handleReviewSubmit() {
-    let review = await sendObjectIDToDatabase(myProduct._id, textareaValue, rating);
-    let myComments = [review.data,...reviews]
-    SetReviews(myComments)
+    let review = await sendObjectIDToDatabase(
+      myProduct._id,
+      textareaValue,
+      rating
+    );
+    let myComments = [review.data, ...reviews];
+    SetReviews(myComments);
     Swal.fire({
       position: "center",
       icon: "success",
@@ -256,7 +256,10 @@ function productDetails(props) {
                 <div className="buttons flex">
                   <button
                     className="text-3xl border border-red-600 hover:bg-red-600 hover:text-white transition bg-white text-red-600  rounded"
-                    onClick={() => { handleReviewSubmit() ; setTextareaValue("")} }
+                    onClick={() => {
+                      handleReviewSubmit();
+                      setTextareaValue("");
+                    }}
                   >
                     Send
                   </button>

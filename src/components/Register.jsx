@@ -2,24 +2,24 @@ import "animate.css";
 import { Form, Link } from "react-router-dom";
 
 export async function action({ request }) {
-    const formData = await request.formData() ; 
-    const userName = formData.get("username") ;
-    const email = formData.get("email") ;
-    const password = formData.get("password") ;
-    const rePassword = formData.get("repassword") ;
-    if (password === rePassword) {
-        // submit the form
-        // const response = await fetch('/register', {
-        //   method: 'POST',
-        //   body: formData,
-        // });
-        // // handle the response
-      } else {
-        // do not submit the form and display an error message
-        alert('Passwords do not match');
-      }
-    console.log(userName,email,password,rePassword);
-    return null
+  const formData = await request.formData();
+  const userName = formData.get("username");
+  const email = formData.get("email");
+  const password = formData.get("password");
+  const rePassword = formData.get("repassword");
+  if (password === rePassword) {
+    // submit the form
+    // const response = await fetch('/register', {
+    //   method: 'POST',
+    //   body: formData,
+    // });
+    // // handle the response
+  } else {
+    // do not submit the form and display an error message
+    alert("Passwords do not match");
+  }
+  console.log(userName, email, password, rePassword);
+  return null;
 }
 
 export default function Register() {
@@ -98,7 +98,10 @@ export default function Register() {
             </button>
           </Link>
         </Form>
-        <p className="text-3xl py-[2em] text-red-600">Login and Regeister from Shopify not available right now but you can use Google Login </p>
+        <p className="text-2xl font-black py-[2em] text-red-600">
+          Login or sRegeister from ShopVibe not available right now but you can
+          use Google Login{" "}
+        </p>
       </div>
     </div>
   );

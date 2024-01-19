@@ -17,7 +17,6 @@ export default function Layout(props) {
       ? JSON.parse(localStorage.getItem("user"))
       : localStorage.clear();
     let user = await getUser(userInfo?.googleId);
-    console.log(user);
     setUser(user)
   }
   useEffect(()=> {

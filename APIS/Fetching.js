@@ -26,10 +26,8 @@ async function getUser(userid) {
   const query = `*[_type == "user" && _id == '${userid}']`;
   try {
     const user = await client.fetch(query);
-    console.log(user);
     return [user];
   } catch (err) {
-    console.log(err);
   }
 }
 
@@ -37,7 +35,6 @@ async function getCategories() {
   const query = '*[_type == "category"]';
   try {
     const categories = await client.fetch(query);
-    console.log(categories);
     return [categories];
   } catch (err) {
     throw {
@@ -56,7 +53,6 @@ async function sendObjectIDToDatabase(id, comment, rating) {
     );
     return response;
   } catch (err) {
-    console.log(err);
   }
 }
 
@@ -66,7 +62,6 @@ async function getReviews(id) {
       proxy +
         `https://shopify-apis-production.up.railway.app/reviews?product_id=${id}`
     );
-    console.log(response);
     return response;
   } catch (err) {
     console.log(err);

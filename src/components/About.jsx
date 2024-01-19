@@ -37,7 +37,7 @@ export default function About() {
 
       <img src={ui} className="w-[80%] lg:max-w-[50%] scale" alt="" />
       <h3 className="w-fit text-[2rem] max-w-[70%] text-center lg:text-[4rem] font-bold text-red-600 pt-[1.5em]">
-        Shopify is Website that has the main functionalities of any store
+        ShopVibe is Website that has the main functionalities of any store
       </h3>
       <h4 className="w-fit text-[1.5rem] text-center lg:text-[2rem] text-red-600 p-[1em]">
         i built it to apply my knowledge of react and react router

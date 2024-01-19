@@ -22,10 +22,8 @@ export default function Home(props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [categoryData, setCategoryData] = useState([]);
   const handleButtonClick = (buttonId) => {
-    console.log(buttonId);
     setActiveButton(buttonId);
   };
-  console.log(maxPrice);
   async function getCategoriesData() {
     let myCategoryData = await getCategories();
     setCategoryData(myCategoryData);
@@ -33,7 +31,6 @@ export default function Home(props) {
   useEffect(() => {
     getCategoriesData();
   }, []);
-  console.log(categoryData);
   let [close, setClose] = useState(true);
   return (
     <>
@@ -147,7 +144,6 @@ export default function Home(props) {
                               } transition mx-[0.3em] block`}
                               disabled={close}
                             >
-                            
                               {category.name}
                             </button>
                           );

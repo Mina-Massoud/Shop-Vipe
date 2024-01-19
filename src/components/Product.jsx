@@ -21,9 +21,8 @@ export default function Product(props) {
     : Infinity;
 
   const minPriceFilter = searchParams.has("minPrice")
-    ? searchParams.get("minPrice") 
+    ? searchParams.get("minPrice")
     : 0;
-  console.log(maxPriceFilter);
   const [swiperRef, setSwiperRef] = useState(null);
   const myProductDataArr = props.products;
   const slidesPerView = {
@@ -63,7 +62,6 @@ export default function Product(props) {
         return product.category === typeFilter;
       })
     : myProdcutDataHandlied;
-      console.log("product");
   let myProducts = myElements.map((product) => {
     return (
       <SwiperSlide key={product._id}>
@@ -142,7 +140,9 @@ export default function Product(props) {
           Sorry no products found with your specification
         </h1>
       ) : (
-        <h1 className="font-black py-[2em]  animate__animated animate__zoomIn">loading...</h1>
+        <h1 className="font-black py-[2em]  animate__animated animate__zoomIn">
+          loading...
+        </h1>
       )}
     </>
   );

@@ -94,7 +94,10 @@ export default function Login() {
             />
           </div>
         </Form>
-        <p className="text-3xl py-[2em] text-red-600">Login and Regeister from Shopify not available right now but you can use Google Login </p>
+        <p className="text-2xl font-black py-[2em] text-red-600">
+          Login or Regeister from ShopVipe not available right now but you can
+          use Google Login{" "}
+        </p>
       </div>
     </div>
   );
