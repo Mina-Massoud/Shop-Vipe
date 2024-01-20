@@ -12,13 +12,13 @@
 <h3>Front-End</h3>
 
 - React
-- socket io
 - Tailwind CSS
 - Sanity
-- 
+
 </br>
 
 <h1>What is the ShopVipe 🌐</h1>
+
 <p> e-commerce website, built using React, React Router, and Tailwind CSS! This project was a significant learning experience for me, as it allowed me to work with a wide range of functionalities typically found in any online store.
 </p>
 
@@ -27,17 +27,22 @@
 <h2>🚀 Key Features</h2>
 
 - Google OAuth Authentication 🌐: Secure user login via Google accounts.
+
 - Sanity Database Integration 🔄: Dynamic content, easy product/category management.
+
 - Fully Functional Cart System 🛒: Seamless product addition, smooth checkout.
+
 - User Reviews and Comments 💬: Valuable feedback on products.
+
 - Sleek and Modern UI with Tailwind CSS 🎨: Visually appealing, responsive design.
+
 - Responsive Design 📱💻: Accessible on desktop and mobile.
+
 - Enhanced User Experience 🌟: Focus on enjoyable shopping.
 
 </br>
 
 <h2>Screenshots</h2>
-
 ![](images/2.jpg)
 ![](images/3.jpg)
 ![](images/4.jpg)
