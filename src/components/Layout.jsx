@@ -8,20 +8,20 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { getUser } from "../../APIS/Fetching";
 export default function Layout(props) {
-  const [user,setUser] = useState({});
-  let path = useLocation() ; 
+  const [user, setUser] = useState({});
+  let path = useLocation();
 
   async function fetchUser() {
     const userInfo =
-    localStorage.getItem("user") !== "undefined"
-      ? JSON.parse(localStorage.getItem("user"))
-      : localStorage.clear();
+      localStorage.getItem("user") !== "undefined"
+        ? JSON.parse(localStorage.getItem("user"))
+        : localStorage.clear();
     let user = await getUser(userInfo?.googleId);
-    setUser(user)
+    setUser(user);
   }
-  useEffect(()=> {
+  useEffect(() => {
     fetchUser();
-  },[path.pathname])
+  }, [path.pathname]);
 
   return (
     <>

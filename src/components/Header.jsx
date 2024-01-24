@@ -99,7 +99,7 @@ export default function Header(props) {
 
         <Link to="./about">
           <button className="border border-red-600  md:text-xl mx-[5px] text-red-600 transition hover:bg-red-600 hover:text-white">
-            About Shopify
+            About ShopVibe
           </button>
         </Link>
 
